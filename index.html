@@ -245,14 +245,14 @@
         </div>
     </div>
     </div>
-    <div class="container__gallery">
+    <div class="container__gallery" id="gallery1">
         <div class="gallery">
-            <a class="gallery__link" href="#"><img class="gallery__img" src="img/gallery/img1.png"></a>
-            <a class="gallery__link" href="#"><img class="gallery__img" src="img/gallery/img2.png"></a>
-            <a class="gallery__link" href="#"><img class="gallery__img" src="img/gallery/img3.png"></a>
-            <a class="gallery__link" href="#"><img class="gallery__img" src="img/gallery/img4.png"></a>
-            <a class="gallery__link" href="#"><img class="gallery__img" src="img/gallery/img5.png"></a>
-            <a class="gallery__link" href="#"><img class="gallery__img" src="img/gallery/img6.png"></a>
+            <div class="gallery__pics"><img class="pic__img" src="img/gallery/img1.png"></div>
+            <div class="gallery__pics"><img class="pic__img" src="img/gallery/img2.png"></div>
+            <div class="gallery__pics"><img class="pic__img" src="img/gallery/img3.png"></div>
+            <div class="gallery__pics"><img class="pic__img" src="img/gallery/img4.png"></div>
+            <div class="gallery__pics"><img class="pic__img" src="img/gallery/img5.png"></div>
+            <div class="gallery__pics"><img class="pic__img" src="img/gallery/img6.png"></div>
             <div class="gallery__preview">
                 <div class="preview">
                     <div class="preview__content">
@@ -553,9 +553,12 @@
     <script src="js/menu.js"></script>
     <script src="js/component.js"></script>
     <script src="js/formChecker.js"></script>
+    <script src="js/componentgall.js"></script>
+    <script src="js/gallery.js"></script>
     <script>
         let feedback = new FormChecker("#feedback1");
         let menu1 = new Menu("#menu1");
+        let gallery = new Gallery("#gallery1");
     </script>
 </body>
 
