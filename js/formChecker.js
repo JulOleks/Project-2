@@ -6,7 +6,7 @@ class FormChecker extends Component {
 	
 
 	this.textfields = this.findObject(".feedback__textfield"); //текстовые поля 
-	this.errorMessage = this.findObject(".b-form__message_error"); //див с сообщением об ошибке
+	this.errorMessage = this.findObject(".form__message_error"); //див с сообщением об ошибке
 
 	this.createEvents();
 	}
@@ -25,7 +25,7 @@ class FormChecker extends Component {
 		
 		isTextfieldError = ! currentTextfieldVal.match(currentRegExp)
 		;
-		currentTextfield.toggleClass("b-textfield_error", isTextfieldError);
+		currentTextfield.toggleClass("textfield__error", isTextfieldError);
 		//console.log(isTextfieldError);
 		return isTextfieldError;
 	}

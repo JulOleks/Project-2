@@ -1,29 +1,33 @@
-function Menu(sSelector){
-	var m = this;
+class Menu extends Component{
+	constructor(sSelector) {
+		super(sSelector);
 
-	m.menu = $(sSelector);
-	m.menuItems = m.menu.children("li");
-
-	m.showSubmenu = function(){
-		console.log("mouseover element:", this);
-		$(this).children(".submenu")
-		// .show();
-		 .stop()
-		 .css("display","block")
-		 .animate({opacity:1},600);
+		this.menu = $(sSelector);
+		this.menuItems = this.findObject("li");
+		this.createEvents();
 	}
 
-	m.hideSubmenu= function(){
-		$(this).children(".submenu")
-		// .hide();
-			 .animate({opacity:0},600, function(){
-				$(this).css("display","none");
+	showSubmenu(event) {
+		console.log("mouseover element:", this.className);
+		$(event.currentTarget).children(".submenu")
+			// .show();
+			.stop()
+			.css("display", "block")
+			.animate({ opacity: 1 }, 600);
+	}
+
+	hideSubmenu(event) {
+		$(event.currentTarget).children(".submenu")
+			// .hide();
+			.animate({ opacity: 0 }, 600, function () {
+				$(this).css("display", "none");
 			});
-		
+
 	}
 
-
-m.menuItems
-	.mouseover(m.showSubmenu)
-	.mouseout(m.hideSubmenu);
+	createEvents() {
+		this.menuItems
+			.mouseover(this.showSubmenu.bind(this))
+			.mouseout(this.hideSubmenu.bind(this));
+	}
 }
